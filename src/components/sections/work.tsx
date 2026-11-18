@@ -1,5 +1,6 @@
 import { useMessages, useTranslations } from "next-intl";
 import BlurFade from "@/components/blur-fade";
+import { SectionHeader } from "@/components/card-primitives";
 import { ExperienceCard } from "@/components/experience-card";
 import { BLUR_FADE_DELAY } from "@/lib/constants";
 
@@ -11,7 +12,7 @@ export default function WorkSection() {
 		<section id="work">
 			<div className="flex min-h-0 flex-col gap-y-3">
 				<BlurFade delay={BLUR_FADE_DELAY * 5}>
-					<h2 className="text-xl text-center font-bold">{t("title")}</h2>
+					<SectionHeader title={t("title")} />
 				</BlurFade>
 
 				{messages.Work.experiences.map((experience, i) => (

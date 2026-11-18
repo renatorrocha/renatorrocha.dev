@@ -7,93 +7,90 @@ import {
 
 export const BLUR_FADE_DELAY = 0.1;
 
-const skillNameToApiName: Record<string, string> = {
-	TailwindCSS: "tailwindcss",
+/** Icon names that don't follow the default slug rule; null = no icon available. */
+const skillIconOverrides: Record<string, string | null> = {
+	"Tailwind CSS": "tailwindcss",
 	"Material UI": "mui",
 	"Hugging Face": "huggingface",
-	"VS Code": "vscode",
-	"Github Actions": "githubactions",
+	"GitHub Actions": "githubactions",
+	"shadcn/ui": "shadcn",
+	"TanStack Query": "reactquery",
+	"AI SDK": null,
 };
 
+export type SkillCategoryKey =
+	| "languages"
+	| "frameworks"
+	| "databases"
+	| "cloud"
+	| "ai";
+
 export interface SkillCategory {
-	category: string;
+	key: SkillCategoryKey;
 	skills: string[];
 }
 
 export const SKILLS: SkillCategory[] = [
 	{
-		category: "Languages & Runtime",
-		skills: ["JavaScript", "TypeScript", "Python", "Golang", "Bun", "Nodejs"],
+		key: "languages",
+		skills: ["TypeScript", "JavaScript", "Python", "Go", "Node.js", "Bun"],
 	},
 	{
-		category: "Frameworks & Libraries",
+		key: "frameworks",
 		skills: [
 			"React",
-			"Nextjs",
-			"Vite",
-			"Nestjs",
+			"Next.js",
+			"Nest.js",
 			"Express",
 			"Elysia",
 			"FastAPI",
+			"TanStack Query",
 			"Zustand",
-			"TailwindCSS",
+			"Vite",
+			"Tailwind CSS",
+			"shadcn/ui",
 			"Material UI",
-			"React Query",
-			"Shadcn",
 		],
 	},
 	{
-		category: "Databases & Messaging",
+		key: "databases",
 		skills: [
 			"PostgreSQL",
 			"Redis",
 			"RabbitMQ",
-			"Supabase",
 			"Prisma",
 			"Drizzle",
+			"Supabase",
 		],
 	},
 	{
-		category: "Cloud & DevOps",
+		key: "cloud",
 		skills: [
-			"AWS",
 			"Docker",
+			"AWS",
 			"Linux",
-			"Bash",
 			"Git",
-			"GitHub",
-			"Cloudflare",
+			"GitHub Actions",
 			"Vercel",
 			"Railway",
-			"grafana",
-			"Github Actions",
+			"Cloudflare",
+			"Grafana",
 		],
 	},
 	{
-		category: "AI",
-		skills: ["Hugging Face", "Ollama", "LangChain", "AI-SDK", "n8n"],
-	},
-	{
-		category: "Tools",
-		skills: ["VS Code", "Obsidian", "Markdown", "Cursor"],
+		key: "ai",
+		skills: ["LangChain", "AI SDK", "Hugging Face", "Ollama", "n8n"],
 	},
 ];
 
 /**
- * convert skill name to api name
+ * Icon URL for a skill, or null when the icon service has none.
  */
-export function getSkillApiName(skillName: string): string {
-	return (
-		skillNameToApiName[skillName] || skillName.toLowerCase().replace(/\s+/g, "")
-	);
-}
-
-/**
- * generate skill icons url
- */
-export function getSkillIconsUrl(skills: string[]): string {
-	const apiNames = skills.map(getSkillApiName).filter(Boolean).join(",");
-	return `https://go-skill-icons.vercel.app/api/icons?i=${apiNames}`;
+export function getSkillIconUrl(skillName: string): string | null {
+	const override = skillIconOverrides[skillName];
+	if (override === null) return null;
+	const apiName = override ?? skillName.toLowerCase().replace(/[\s.]+/g, "");
+	return `https://go-skill-icons.vercel.app/api/icons?i=${apiName}`;
 }
 
 export const DATA = {

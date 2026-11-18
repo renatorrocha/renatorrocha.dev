@@ -69,7 +69,7 @@
             "badges": [
               "React",
               "TypeScript",
-              "Tanstack Router",
+              "TanStack Router",
               "Figma"
             ],
             "description": "- Responsive interfaces with React, TypeScript and Tanstack Router\n- Figma wireframes to validate user flows and screens\n- Requirements gathering and scope documentation"
@@ -150,8 +150,7 @@
       "frameworks": "Frameworks & Libraries",
       "databases": "Databases & Messaging",
       "cloud": "Cloud & DevOps",
-      "ai": "AI",
-      "tools": "Tools"
+      "ai": "AI"
     }
   },
   "Certifications": {
@@ -177,51 +176,49 @@
     ]
   },
   "Project": {
-    "title": "My Projects",
-    "subtitle": "Check out my",
-    "highlight": "latest work",
-    "description": "Here are a few of my favorite projects that I have worked on.",
+    "title": "Projects",
+    "description": "Personal projects I built from scratch.",
+    "links": {
+      "website": "Website",
+      "code": "Code"
+    },
     "projects": [
       {
         "title": "renatorrocha.dev",
         "href": "https://renatorrocha.dev/",
-        "active": true,
-        "description": "My personal website, where I share my knowledge and experiences.",
+        "description": "This portfolio: experience, education and projects, in English and Portuguese.",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
-          "Shadcn UI",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
           "Vercel"
         ],
         "links": [
           {
-            "type": "Website",
+            "type": "website",
             "href": "https://renatorrocha.dev/"
           },
           {
-            "type": "Code",
-            "href": "https://github.com/renatorrocha/renato-dev"
+            "type": "code",
+            "href": "https://github.com/renatorrocha/renatorrocha.dev"
           }
-        ],
-        "image": "",
-        "video": ""
+        ]
       },
       {
         "title": "Dev-Connect",
         "href": "https://dev-connect-prod.up.railway.app/",
-        "active": true,
-        "description": "Connect with developers from around the world and share your ideas and projects on a dynamic and interactive platform.",
+        "description": "Social network for developers to share ideas and projects.\n\n- Auth, feed and profiles built on the T3 Stack (tRPC, Prisma, NextAuth)\n- PostgreSQL database, deployed on Railway",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
+          "TypeScript",
+          "Tailwind CSS",
           "NextAuth",
           "Prisma",
-          "Tanstack Query",
-          "Shadcn UI",
-          "TRPC",
-          "T3-Stack",
+          "TanStack Query",
+          "shadcn/ui",
+          "tRPC",
+          "T3 Stack",
           "React Hook Form",
           "Zod",
           "Railway",
@@ -229,66 +226,67 @@
         ],
         "links": [
           {
-            "type": "Website",
+            "type": "website",
             "href": "https://dev-connect-prod.up.railway.app/"
           },
           {
-            "type": "Code",
+            "type": "code",
             "href": "https://github.com/renatorrocha/dev-connect"
           }
-        ],
-        "image": "",
-        "video": ""
+        ]
       },
       {
         "title": "ShowScout",
         "href": "https://spot-show.vercel.app/",
-        "active": false,
-        "description": "ShowScout is a web application that allows users to log in with their Spotify account and view upcoming shows of their favorite artists. The application leverages the Spotify API to fetch the list of artists the user follows and displays their upcoming concerts using the TicketMaster API.",
+        "description": "Sign in with Spotify to see upcoming shows from the artists you follow.\n\n- Followed artists via the Spotify API\n- Concert dates via the Ticketmaster API",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
+          "TypeScript",
+          "Tailwind CSS",
           "NextAuth",
-          "Shadcn UI",
+          "shadcn/ui",
           "Spotify API",
-          "TicketMaster API"
+          "Ticketmaster API"
         ],
         "links": [
           {
-            "type": "Website",
+            "type": "website",
             "href": "https://spot-show.vercel.app/"
           },
           {
-            "type": "Code",
+            "type": "code",
             "href": "https://github.com/renatorrocha/ShowScout"
           }
-        ],
-        "image": "",
-        "video": ""
+        ]
       },
       {
         "title": "Dg Rei da Palha",
         "href": "https://dg-rei-das-palhas.up.railway.app/",
-        "active": false,
-        "description": "A comprehensive website for a local confectionery company, featuring an engaging landing page for product showcase and a robust admin panel for efficient management of products and transactions.",
+        "description": "Website for a local confectionery business.\n\n- Landing page showcasing products\n- Admin dashboard to manage products and transactions",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
+          "TypeScript",
+          "Tailwind CSS",
           "Clerk",
           "Prisma",
-          "Tanstack Query",
-          "Shadcn UI",
+          "TanStack Query",
+          "shadcn/ui",
           "Framer Motion",
           "React Hook Form",
           "Zod",
           "Railway",
           "PostgreSQL"
         ],
-        "links": [],
-        "image": "",
-        "video": ""
+        "links": [
+          {
+            "type": "website",
+            "href": "https://dg-rei-das-palhas.up.railway.app/"
+          },
+          {
+            "type": "code",
+            "href": "https://github.com/renatorrocha/dg-rei-da-palha"
+          }
+        ]
       }
     ]
   }

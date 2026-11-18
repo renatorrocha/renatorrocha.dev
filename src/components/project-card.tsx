@@ -1,118 +1,79 @@
-import Link from "next/link";
 import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+	ExternalLinkIcon,
+	GitHubLogoIcon,
+	GlobeIcon,
+} from "@radix-ui/react-icons";
+import { useTranslations } from "next-intl";
+import {
+	cardSurface,
+	RichText,
+	TechBadges,
+} from "@/components/card-primitives";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import Markdown from "react-markdown";
-import { Badge } from "./ui/badge";
-import { GitHubLogoIcon, GlobeIcon } from "@radix-ui/react-icons";
 
-interface IProjectCard {
-  title: string;
-  href?: string;
-  description: string;
-  tags: readonly string[];
-  image?: string;
-  video?: string;
-  links?: readonly {
-    type: string;
-    href: string;
-  }[];
-  className?: string;
+export interface Project {
+	title: string;
+	href?: string;
+	description: string;
+	technologies: readonly string[];
+	links?: readonly { type: string; href: string }[];
 }
 
-export function ProjectCard({
-  title,
-  href,
-  description,
-  tags,
-  image,
-  video,
-  links,
-  className,
-}: IProjectCard) {
-  return (
-    <Card
-      className={
-        "flex h-full flex-col overflow-hidden border transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-lg"
-      }
-    >
-      <Link
-        href={href || "#"}
-        className={cn("block cursor-pointer", className)}
-      >
-        {video && (
-          <video
-            src={video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="pointer-events-none mx-auto h-40 w-full object-cover object-top"
-          />
-        )}
-        {image && (
-          <Image
-            src={image}
-            alt={title}
-            width={500}
-            height={300}
-            className="h-40 w-full overflow-hidden object-cover object-top"
-          />
-        )}
-      </Link>
-      <CardHeader className="px-2">
-        <div className="space-y-1">
-          <CardTitle className="mt-1 text-base">{title}</CardTitle>
-          <Markdown className="prose dark:prose-invert max-w-full text-pretty font-sans text-xs text-muted-foreground">
-            {description}
-          </Markdown>
-        </div>
-      </CardHeader>
+const linkIcons: Record<string, typeof GlobeIcon> = {
+	website: GlobeIcon,
+	code: GitHubLogoIcon,
+};
 
-      <CardContent className="mt-auto flex flex-col px-2">
-        {tags && tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-1">
-            {tags?.map((tag) => (
-              <Badge
-                className="px-1 py-0 text-[10px]"
-                variant="secondary"
-                key={tag}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </CardContent>
+export function ProjectCard({ project }: { project: Project }) {
+	const t = useTranslations("Project");
+	const { title, href, description, technologies, links } = project;
 
-      <CardFooter className="px-2 pb-2">
-        {links && links.length > 0 && (
-          <div className="flex w-full flex-row flex-wrap items-center justify-center gap-2">
-            {links?.map((link, idx) => (
-              <Link href={link?.href} key={idx} target="_blank">
-                <Badge
-                  key={idx}
-                  variant="outline"
-                  className="flex gap-1 px-2 py-1 text-[10px]"
-                >
-                  {link.type === "Website" ? (
-                    <GlobeIcon className="size-4" />
-                  ) : (
-                    <GitHubLogoIcon className="size-4" />
-                  )}
-                  {link.type}
-                </Badge>
-              </Link>
-            ))}
-          </div>
-        )}
-      </CardFooter>
-    </Card>
-  );
+	return (
+		<Card className={cn("flex h-full flex-col gap-3", cardSurface)}>
+			<div>
+				<h3 className="text-base font-semibold leading-tight">
+					{href ? (
+						<a
+							href={href}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group/link inline-flex items-center gap-1 rounded-sm hover:underline hover:underline-offset-4 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
+						>
+							{title}
+							<ExternalLinkIcon className="size-3.5 opacity-0 transition-opacity group-hover/link:opacity-70 group-focus-visible/link:opacity-70" />
+						</a>
+					) : (
+						title
+					)}
+				</h3>
+			</div>
+
+			<RichText>{description}</RichText>
+
+			<div className="mt-auto flex flex-col gap-3">
+				<TechBadges items={technologies} />
+
+				{links && links.length > 0 && (
+					<div className="flex flex-wrap items-center gap-3 border-t border-border pt-3">
+						{links.map((link) => {
+							const Icon = linkIcons[link.type] ?? GlobeIcon;
+							return (
+								<a
+									key={link.href}
+									href={link.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-1.5 rounded-sm text-xs text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
+								>
+									<Icon className="size-3.5" aria-hidden />
+									{t(`links.${link.type === "code" ? "code" : "website"}`)}
+								</a>
+							);
+						})}
+					</div>
+				)}
+			</div>
+		</Card>
+	);
 }

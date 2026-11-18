@@ -71,7 +71,7 @@
             "badges": [
               "React",
               "TypeScript",
-              "Tanstack Router",
+              "TanStack Router",
               "Figma"
             ],
             "description": "- Interfaces responsivas com React, TypeScript e Tanstack Router\n- Wireframes no Figma para validar fluxos e telas\n- Levantamento e documentação de requisitos e escopo"
@@ -153,8 +153,7 @@
       "frameworks": "Frameworks & Bibliotecas",
       "databases": "Bancos de Dados & Mensageria",
       "cloud": "Cloud & DevOps",
-      "ai": "Inteligência Artificial",
-      "tools": "Ferramentas"
+      "ai": "Inteligência Artificial"
     }
   },
 
@@ -182,51 +181,49 @@
   },
 
   "Project": {
-    "title": "Meus Projetos",
-    "subtitle": "Confira meu",
-    "highlight": "trabalho mais recente",
-    "description": "Aqui estão alguns dos meus projetos favoritos em que trabalhei.",
+    "title": "Projetos",
+    "description": "Projetos pessoais que construí do zero.",
+    "links": {
+      "website": "Site",
+      "code": "Código"
+    },
     "projects": [
       {
         "title": "renatorrocha.dev",
         "href": "https://renatorrocha.dev/",
-        "active": true,
-        "description": "Meu site pessoal, onde compartilho meus conhecimentos e experiências.",
+        "description": "Este portfólio: experiência, formação e projetos, em português e inglês.",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
-          "Shadcn UI",
+          "TypeScript",
+          "Tailwind CSS",
+          "shadcn/ui",
           "Vercel"
         ],
         "links": [
           {
-            "type": "Website",
+            "type": "website",
             "href": "https://renatorrocha.dev/"
           },
           {
-            "type": "Code",
-            "href": "https://github.com/renatorrocha/renato-dev"
+            "type": "code",
+            "href": "https://github.com/renatorrocha/renatorrocha.dev"
           }
-        ],
-        "image": "",
-        "video": ""
+        ]
       },
       {
         "title": "Dev-Connect",
         "href": "https://dev-connect-prod.up.railway.app/",
-        "active": true,
-        "description": "Conecte-se com desenvolvedores de todo o mundo e compartilhe suas ideias e projetos em uma plataforma dinâmica e interativa.",
+        "description": "Rede social para desenvolvedores compartilharem ideias e projetos.\n\n- Autenticação, feed e perfis com a T3 Stack (tRPC, Prisma, NextAuth)\n- Banco PostgreSQL e deploy no Railway",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
+          "TypeScript",
+          "Tailwind CSS",
           "NextAuth",
           "Prisma",
-          "Tanstack Query",
-          "Shadcn UI",
-          "TRPC",
-          "T3-Stack",
+          "TanStack Query",
+          "shadcn/ui",
+          "tRPC",
+          "T3 Stack",
           "React Hook Form",
           "Zod",
           "Railway",
@@ -234,66 +231,67 @@
         ],
         "links": [
           {
-            "type": "Website",
-            "href": "https://spot-show.vercel.app/"
+            "type": "website",
+            "href": "https://dev-connect-prod.up.railway.app/"
           },
           {
-            "type": "Code",
-            "href": "https://github.com/renatorrocha/ShowScout"
+            "type": "code",
+            "href": "https://github.com/renatorrocha/dev-connect"
           }
-        ],
-        "image": "",
-        "video": ""
+        ]
       },
       {
         "title": "ShowScout",
         "href": "https://spot-show.vercel.app/",
-        "active": false,
-        "description": "ShowScout é uma aplicação web que permite aos usuários fazer login com sua conta Spotify e visualizar os shows futuros de seus artistas favoritos. A aplicação utiliza a API do Spotify para buscar a lista de artistas que o usuário segue e exibe seus próximos concertos usando a API TicketMaster.",
+        "description": "Login com Spotify para ver os próximos shows dos artistas que você segue.\n\n- Artistas seguidos via API do Spotify\n- Agenda de shows via API do Ticketmaster",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
+          "TypeScript",
+          "Tailwind CSS",
           "NextAuth",
-          "Shadcn UI",
+          "shadcn/ui",
           "Spotify API",
-          "TicketMaster API"
+          "Ticketmaster API"
         ],
         "links": [
           {
-            "type": "Website",
+            "type": "website",
             "href": "https://spot-show.vercel.app/"
           },
           {
-            "type": "Código",
+            "type": "code",
             "href": "https://github.com/renatorrocha/ShowScout"
           }
-        ],
-        "image": "",
-        "video": ""
+        ]
       },
       {
         "title": "Dg Rei da Palha",
         "href": "https://dg-rei-das-palhas.up.railway.app/",
-        "active": false,
-        "description": "Um site abrangente para uma empresa de confeitaria local, com uma página de destino envolvente para exibição de produtos e um painel administrativo robusto para gerenciamento eficiente de produtos e transações.",
+        "description": "Site para uma confeitaria local.\n\n- Landing page com vitrine de produtos\n- Painel administrativo para gerenciar produtos e transações",
         "technologies": [
           "Next.js",
-          "Typescript",
-          "TailwindCSS",
+          "TypeScript",
+          "Tailwind CSS",
           "Clerk",
           "Prisma",
-          "Tanstack Query",
-          "Shadcn UI",
+          "TanStack Query",
+          "shadcn/ui",
           "Framer Motion",
           "React Hook Form",
           "Zod",
           "Railway",
           "PostgreSQL"
         ],
-        "links": [],
-        "image": "",
-        "video": ""
+        "links": [
+          {
+            "type": "website",
+            "href": "https://dg-rei-das-palhas.up.railway.app/"
+          },
+          {
+            "type": "code",
+            "href": "https://github.com/renatorrocha/dg-rei-da-palha"
+          }
+        ]
       }
     ]
   }

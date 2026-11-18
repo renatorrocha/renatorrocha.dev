@@ -5,9 +5,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useId, useState } from "react";
-import Markdown, { type Components } from "react-markdown";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import {
+	cardSurface,
+	RichText,
+	StatusPill,
+	TechBadges,
+} from "@/components/card-primitives";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -78,37 +82,6 @@ function useExperienceFormat() {
 	return { t, formatPeriod, formatDuration };
 }
 
-function RoleBadges({ badges }: { badges?: readonly string[] }) {
-	if (!badges?.length) return null;
-	return (
-		<div className="flex flex-wrap gap-1">
-			{badges.map((badge) => (
-				<Badge
-					variant="outline"
-					className="px-1.5 py-0.5 text-[10px] md:text-xs"
-					key={badge}
-				>
-					{badge}
-				</Badge>
-			))}
-		</div>
-	);
-}
-
-/** Compact, scannable styling for role descriptions (summary line + bullets). */
-const descriptionComponents: Components = {
-	p: ({ children }) => <p className="text-pretty">{children}</p>,
-	ul: ({ children }) => <ul className="flex flex-col gap-1.5">{children}</ul>,
-	li: ({ children }) => (
-		<li className="relative pl-3.5 text-pretty before:absolute before:top-[0.6em] before:left-0 before:size-1 before:rounded-full before:bg-primary/60 dark:before:bg-secondary/70">
-			{children}
-		</li>
-	),
-	strong: ({ children }) => (
-		<strong className="font-medium text-foreground">{children}</strong>
-	),
-};
-
 function RoleDescription({
 	id,
 	description,
@@ -128,11 +101,9 @@ function RoleDescription({
 				collapsed: { opacity: 0, height: 0 },
 			}}
 			transition={{ duration: 0.2 }}
-			className="overflow-hidden text-sm leading-relaxed text-muted-foreground"
+			className="overflow-hidden"
 		>
-			<div className="flex flex-col gap-2 pt-2">
-				<Markdown components={descriptionComponents}>{description}</Markdown>
-			</div>
+			<RichText className="pt-2">{description}</RichText>
 		</motion.div>
 	);
 }
@@ -205,7 +176,7 @@ function TimelineRole({
 			</button>
 
 			<div className="mt-2">
-				<RoleBadges badges={role.badges} />
+				<TechBadges items={role.badges} />
 			</div>
 
 			<AnimatePresence initial={false}>
@@ -256,7 +227,7 @@ export function ExperienceCard({
 			);
 
 	return (
-		<Card className="flex flex-col gap-3 p-3 transition-all duration-300 hover:shadow-md hover:ring-2 hover:ring-muted-foreground/40 md:p-4">
+		<Card className={cn("flex flex-col gap-3", cardSurface)}>
 			{/* header */}
 			<div className="flex gap-3 md:gap-4">
 				<Avatar className="bg-muted-background size-10 flex-none border-0 dark:bg-foreground md:size-12">
@@ -293,13 +264,7 @@ export function ExperienceCard({
 
 					<div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
 						{spanEnd === null && (
-							<span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-2 py-0.5 font-medium text-emerald-700 dark:text-emerald-400">
-								<span aria-hidden className="relative flex size-1.5">
-									<span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-500 opacity-60 motion-reduce:hidden" />
-									<span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
-								</span>
-								{t("present")}
-							</span>
+							<StatusPill tone="live">{t("present")}</StatusPill>
 						)}
 						{single ? (
 							<span className="text-sm">{single.title}</span>
@@ -345,7 +310,7 @@ export function ExperienceCard({
 			) : (
 				single && (
 					<div className="flex flex-col md:ml-16">
-						<RoleBadges badges={single.badges} />
+						<TechBadges items={single.badges} />
 						{single.description && (
 							<>
 								<button
