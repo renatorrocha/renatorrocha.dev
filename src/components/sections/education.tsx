@@ -1,7 +1,7 @@
 import { useMessages, useTranslations } from "next-intl";
+import BlurFade from "@/components/blur-fade";
+import { ExperienceCard } from "@/components/experience-card";
 import { BLUR_FADE_DELAY } from "@/lib/constants";
-import BlurFade from "../blur-fade";
-import { ResumeCard } from "../resume-card";
 
 export default function EducationSection() {
 	const t = useTranslations("Education");
@@ -13,18 +13,23 @@ export default function EducationSection() {
 				<BlurFade delay={BLUR_FADE_DELAY * 7}>
 					<h2 className="text-center text-xl font-bold">{t("title")}</h2>
 				</BlurFade>
-				{messages.Education.records.map((education, id) => (
+				{messages.Education.records.map((education, i) => (
 					<BlurFade
-						key={`${education.institution}-${id}`}
-						delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+						key={education.institution}
+						delay={BLUR_FADE_DELAY * 8 + i * 0.05}
 					>
-						<ResumeCard
-							href={education.href}
-							logoUrl={education.logoUrl}
-							altText={education.institution}
-							title={education.institution}
-							subtitle={education.degree}
-							period={`${education.start} - ${education.end}`}
+						<ExperienceCard
+							variant="education"
+							experience={{
+								company: education.institution,
+								href: education.href,
+								logoUrl: education.logoUrl,
+								roles: education.programs.map((program) => ({
+									title: program.degree,
+									start: program.start,
+									end: program.end,
+								})),
+							}}
 						/>
 					</BlurFade>
 				))}
