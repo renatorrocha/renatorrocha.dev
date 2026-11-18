@@ -8,12 +8,12 @@
 
   "Hero": {
     "greeting": "Olá, eu sou o Renato 👋",
-    "description": "Sou um desenvolvedor apaixonado, trabalhando na construção de soluções inovadoras com tecnologias modernas."
+    "description": "Desenvolvedor fullstack com TypeScript, Next.js e Nest.js, com experiência em mobile e IA aplicada."
   },
 
   "About": {
     "aboutMe": "Sobre Mim",
-    "resume": "Sou um **desenvolvedor de software** apaixonado e dedicado, sempre buscando aprimorar minhas habilidades e enfrentar novos desafios tecnológicos. Comecei minha carreira como **Desenvolvedor Mobile** com foco em _Android_, atuei como **Desenvolvedor Fullstack** e agora sou um **Desenvolvedor de software / AI ML Jr**, trabalhando com desenvolvimento web e projetos de Inteligência Artificial e Machine Learning."
+    "resume": "Sou **desenvolvedor fullstack**, atualmente **Fullstack IV na ISH/Vision Cybersecurity**, onde trabalho no portal interno da empresa com Next.js, Nest.js e PostgreSQL, além de evoluir sistemas legados e explorar iniciativas de IA. Comecei como **Desenvolvedor Mobile** (_Android_), passei por desenvolvimento fullstack e por projetos de **IA e Machine Learning** na Findes, e hoje gosto de construir produtos de ponta a ponta, do planejamento ao deploy."
   },
 
   "Work": {

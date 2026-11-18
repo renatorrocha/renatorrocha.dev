@@ -7,12 +7,12 @@
   },
   "Hero": {
     "greeting": "Hi, I'm Renato 👋",
-    "description": "I'm a passionate developer, working on building innovative solutions with modern technologies."
+    "description": "Fullstack developer working with TypeScript, Next.js and Nest.js, with experience in mobile and applied AI."
   },
 
   "About": {
     "aboutMe": "About Me",
-    "resume": "I'm a passionate and dedicated **software developer**, constantly seeking to enhance my skills and tackle new technological challenges. Started my career as a **Mobile Developer** focused in _Android_, worked as a **Fullstack Developer** and now I'm a **Software Developer / AI ML Jr**, working with web development and Artificial Intelligence and Machine Learning projects."
+    "resume": "I'm a **fullstack developer**, currently **Fullstack IV at ISH/Vision Cybersecurity**, where I work on the company's internal portal with Next.js, Nest.js and PostgreSQL, while also evolving legacy systems and exploring AI initiatives. I started out as a **Mobile Developer** (_Android_), moved into fullstack development and **AI and Machine Learning** projects at Findes, and today I enjoy building products end to end, from planning to deploy."
   },
   "Work": {
     "title": "Professional Experience",

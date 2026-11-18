@@ -16,19 +16,21 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://renatorrocha.dev"),
-	title: "Renato Rocha | Frontend & Mobile Developer",
+	title: "Renato Rocha | Fullstack Developer",
 	description:
-		"Portfolio of Renato Rocha, a software developer specializing in Frontend and Mobile development. Expert in React, Next.js, TypeScript, and Android development.",
+		"Portfolio of Renato Rocha, a fullstack developer building web products end to end with TypeScript, Next.js, Nest.js and PostgreSQL, with a background in Android and applied AI.",
 	keywords: [
 		"Renato Rocha",
-		"Frontend Developer",
-		"Mobile Developer",
+		"Fullstack Developer",
+		"Software Engineer",
 		"React Developer",
 		"Next.js Developer",
+		"Nest.js Developer",
+		"Node.js",
 		"TypeScript",
-		"Android Developer",
+		"PostgreSQL",
+		"AI",
 		"Web Development",
-		"Software Engineer",
 		"Brazil Developer",
 	],
 	authors: [{ name: "Renato Rocha", url: "https://renatorrocha.dev" }],
@@ -38,9 +40,9 @@ export const metadata: Metadata = {
 		type: "website",
 		locale: "pt_BR",
 		alternateLocale: "en_US",
-		title: "Renato Rocha | Frontend & Mobile Developer",
+		title: "Renato Rocha | Fullstack Developer",
 		description:
-			"Explore the portfolio of Renato Rocha, a developer specialized in creating amazing experiences on web and mobile platforms using React, Next.js, and Android.",
+			"Explore the portfolio of Renato Rocha, a fullstack developer working with TypeScript, Next.js and Nest.js, with experience in mobile and applied AI.",
 		url: "https://renatorrocha.dev",
 		siteName: "Renato Rocha Portfolio",
 		images: [
@@ -48,15 +50,15 @@ export const metadata: Metadata = {
 				url: "/project-screenshot.png",
 				width: 1200,
 				height: 630,
-				alt: "Renato Rocha - Frontend & Mobile Developer Portfolio",
+				alt: "Renato Rocha - Fullstack Developer Portfolio",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Renato Rocha | Frontend & Mobile Developer",
+		title: "Renato Rocha | Fullstack Developer",
 		description:
-			"Frontend & Mobile developer specialized in React, Next.js, and Android development.",
+			"Fullstack developer working with TypeScript, Next.js, Nest.js and applied AI.",
 		images: ["/project-screenshot.png"],
 	},
 };

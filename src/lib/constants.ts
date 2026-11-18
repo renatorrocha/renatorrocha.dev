@@ -39,6 +39,8 @@ export const SKILLS: SkillCategory[] = [
 		key: "frameworks",
 		skills: [
 			"React",
+			"React Native",
+			"Expo",
 			"Next.js",
 			"Nest.js",
 			"Express",
