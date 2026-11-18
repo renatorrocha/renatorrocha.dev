@@ -141,8 +141,8 @@
     "description": "Aqui estão alguns dos meus projetos favoritos em que trabalhei.",
     "projects": [
       {
-        "title": "Renatodev.com",
-        "href": "https://renatodev.com/",
+        "title": "renatorrocha.dev",
+        "href": "https://renatorrocha.dev/",
         "active": true,
         "description": "Meu site pessoal, onde compartilho meus conhecimentos e experiências.",
         "technologies": [
@@ -155,7 +155,7 @@
         "links": [
           {
             "type": "Website",
-            "href": "https://renatodev.com/"
+            "href": "https://renatorrocha.dev/"
           },
           {
             "type": "Code",

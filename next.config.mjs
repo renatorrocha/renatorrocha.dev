@@ -17,7 +17,7 @@ const nextConfig = {
   //   return [
   //     {
   //       source: "/",
-  //       destination: "https://renatodev.com/en",
+  //       destination: "https://renatorrocha.dev/en",
   //       permanent: true,
   //     },
   //   ];

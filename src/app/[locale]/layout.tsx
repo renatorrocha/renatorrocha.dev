@@ -15,6 +15,7 @@ import { routing } from "@/services/i18n/routing";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://renatorrocha.dev"),
 	title: "Renato Rocha | Frontend & Mobile Developer",
 	description:
 		"Portfolio of Renato Rocha, a software developer specializing in Frontend and Mobile development. Expert in React, Next.js, TypeScript, and Android development.",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 		"Software Engineer",
 		"Brazil Developer",
 	],
-	authors: [{ name: "Renato Rocha", url: "https://renatodev.com" }],
+	authors: [{ name: "Renato Rocha", url: "https://renatorrocha.dev" }],
 	creator: "Renato Rocha",
 	publisher: "Renato Rocha",
 	openGraph: {
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 		title: "Renato Rocha | Frontend & Mobile Developer",
 		description:
 			"Explore the portfolio of Renato Rocha, a developer specialized in creating amazing experiences on web and mobile platforms using React, Next.js, and Android.",
-		url: "https://renatodev.com",
+		url: "https://renatorrocha.dev",
 		siteName: "Renato Rocha Portfolio",
 		images: [
 			{

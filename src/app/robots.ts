@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: ["/api/", "/private/"],
 			},
 		],
-		sitemap: "https://renatodev.com/sitemap.xml",
-		host: "https://renatodev.com",
+		sitemap: "https://renatorrocha.dev/sitemap.xml",
+		host: "https://renatorrocha.dev",
 	};
 }

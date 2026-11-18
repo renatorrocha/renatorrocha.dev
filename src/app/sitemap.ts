@@ -3,14 +3,14 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
 	return [
 		{
-			url: "https://renatodev.com",
+			url: "https://renatorrocha.dev",
 			lastModified: new Date(),
 			changeFrequency: "monthly",
 			priority: 1,
 			alternates: {
 				languages: {
-					pt: "https://renatodev.com/pt",
-					en: "https://renatodev.com/en",
+					pt: "https://renatorrocha.dev/pt",
+					en: "https://renatorrocha.dev/en",
 				},
 			},
 		},
